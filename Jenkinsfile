@@ -18,5 +18,8 @@ pipeline {
                 }
             }
         }
+        stage('After') {
+            sh 'echo after commit number is ${shortCommit}'
+        }
     }
 }
