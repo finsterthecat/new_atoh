@@ -11,9 +11,11 @@ pipeline {
         }
         stage('Next') {
             steps {
-                gitc = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                shortCommit = gitCommit.take(6)
-                echo "Commit# ${shortCommit}"
+                script {
+                    gitc = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                    shortCommit = gitCommit.take(6)
+                    echo "Commit# ${shortCommit}"
+                }
             }
         }
     }
