@@ -23,7 +23,7 @@ pipeline {
                 script {
                     echo "Commit 2# ${shortCommit}"
                 }
-                sh 'echo shell after commit number is ' & "${shortCommit}"
+                sh 'echo shell after commit number is ' + "${shortCommit}"
             }
         }
     }
