@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     gitc = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                    shortCommit = gitCommit.take(6)
+                    shortCommit = gitc.take(6)
                     echo "Commit# ${shortCommit}"
                 }
             }
